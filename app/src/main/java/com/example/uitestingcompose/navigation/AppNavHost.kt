@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.uitestingcompose.buttons.ButtonScreen
 import com.example.uitestingcompose.home.HomeScreen
+import com.example.uitestingcompose.lists.ListScreen
 import com.example.uitestingcompose.tasks.presentation.TasksScreen
 import com.example.uitestingcompose.tasks.presentation.TasksViewModel
 import com.example.uitestingcompose.texts.TextScreen
@@ -33,6 +34,9 @@ fun AppNavHost(
         }
         composable(NavigationItem.Texts.route) {
             TextScreen()
+        }
+        composable(NavigationItem.Lists.route) {
+            ListScreen()
         }
         composable(NavigationItem.Tasks.route) {
             val tasksViewModel:TasksViewModel = hiltViewModel()

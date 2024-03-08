@@ -5,7 +5,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
-import com.example.uitestingcompose.tasks.constants.Constants.TASK_LIST_TEST_TAG
+import com.example.uitestingcompose.constants.ComposeTestTags.TASK_LIST_TEST_TAG
 import com.example.uitestingcompose.tasks.presentation.UIEvent
 import com.example.uitestingcompose.tasks.model.TaskModel
 

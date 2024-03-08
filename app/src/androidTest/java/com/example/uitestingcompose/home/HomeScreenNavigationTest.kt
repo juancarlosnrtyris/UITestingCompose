@@ -7,6 +7,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
+import com.example.uitestingcompose.constants.ComposeTestTags
 import com.example.uitestingcompose.navigation.AppNavHost
 import com.example.uitestingcompose.navigation.NavigationItem
 import org.junit.Before
@@ -36,19 +37,25 @@ class HomeScreenNavigationTest {
 
     @Test
     fun appNavHost_clickBtnTasks_navigatesToTasksScreen() {
-        composeTestRule.onNodeWithTag("btnNavigateTasks").performClick()
+        composeTestRule.onNodeWithTag(ComposeTestTags.NAVIGATE_TASKS_TEST_TAG).performClick()
         navController.assertCurrentRouteName(NavigationItem.Tasks.route)
     }
 
     @Test
     fun appNavHost_clickBtnButtons_navigatesToButtonsScreen() {
-        composeTestRule.onNodeWithTag("btnNavigateButtons").performClick()
+        composeTestRule.onNodeWithTag(ComposeTestTags.NAVIGATE_BUTTONS_TEST_TAG).performClick()
         navController.assertCurrentRouteName(NavigationItem.Buttons.route)
     }
 
     @Test
     fun appNavHost_clickBtnTexts_navigatesToTextsScreen() {
-        composeTestRule.onNodeWithTag("btnNavigateTexts").performClick()
+        composeTestRule.onNodeWithTag(ComposeTestTags.NAVIGATE_TEXTS_TEST_TAG).performClick()
         navController.assertCurrentRouteName(NavigationItem.Texts.route)
+    }
+
+    @Test
+    fun appNavHost_clickBtnLists_navigatesToListsScreen() {
+        composeTestRule.onNodeWithTag(ComposeTestTags.NAVIGATE_LISTS_TEST_TAG).performClick()
+        navController.assertCurrentRouteName(NavigationItem.Lists.route)
     }
 }

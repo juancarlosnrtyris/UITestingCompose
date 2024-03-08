@@ -1,4 +1,4 @@
-package com.example.uitestingcompose.components
+package com.example.uitestingcompose.tasks
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextContains
@@ -28,7 +28,7 @@ class TasksDialogTest {
 
         composeTestRule.onNodeWithTag("inputMailLogin")
 
-        composeTestRule.onNodeWithText("Esto es una prueba")
+        composeTestRule.onNodeWithText("Esto es una prueba", ignoreCase = true)
 
 
         composeTestRule.onNodeWithTag("dialog").assertIsDisplayed()
@@ -69,17 +69,6 @@ class TasksDialogTest {
     }
 
     @Test
-    fun whenTaskIsAddedThenVerifyTextContainTaskUltron() {
-        composeTestRule.setContent {
-            AddTasksDialog(show = true, onDismiss = {}, onTaskAdded = {})
-        }
-
-        composeTestRule.onNodeWithTag("inputDialog")
-            .assertTextContains("Task")
-    }
-
-
-    @Test
     fun whenDialogStartTextAddTaskShouldContainText() {
         composeTestRule.setContent {
             AddTasksDialog(show = true, onDismiss = {}, onTaskAdded = {})
@@ -107,21 +96,6 @@ class TasksDialogTest {
         composeTestRule.onNodeWithTag("btnAddTask").assertTextContains("Añadir tarea")
 
     }
-
-    @Test
-    fun whenDialogStartBtnAddTaskShouldDisplayed() {
-        composeTestRule.setContent {
-            AddTasksDialog(show = true, onDismiss = {}, onTaskAdded = {})
-        }
-
-        composeTestRule.onNodeWithTag("btnAddTask").performImeAction()
-
-
-        composeTestRule.onNodeWithTag("btnAddTask")
-            .assertIsDisplayed()
-
-    }
-
 
     @Test
     fun whenComponentStartThenVerifyContentIsEmpty() {

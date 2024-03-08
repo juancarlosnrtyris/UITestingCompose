@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import com.example.uitestingcompose.constants.ComposeTestTags
 import com.example.uitestingcompose.navigation.NavigationItem
 
 @Composable
@@ -20,17 +21,22 @@ fun HomeScreen(navigate: (String) -> Unit) {
     ) {
         Button(onClick = {
             navigate(NavigationItem.Buttons.route)
-        }, modifier = Modifier.align(Alignment.CenterHorizontally).testTag("btnNavigateButtons")) {
+        }, modifier = Modifier.align(Alignment.CenterHorizontally).testTag(ComposeTestTags.NAVIGATE_BUTTONS_TEST_TAG)) {
             Text(text = "Navigate To Buttons")
         }
         Button(onClick = {
             navigate(NavigationItem.Texts.route)
-        }, modifier = Modifier.align(Alignment.CenterHorizontally).testTag("btnNavigateTexts")) {
+        }, modifier = Modifier.align(Alignment.CenterHorizontally).testTag(ComposeTestTags.NAVIGATE_TEXTS_TEST_TAG)) {
             Text(text = "Navigate To Texts")
         }
         Button(onClick = {
+            navigate(NavigationItem.Lists.route)
+        }, modifier = Modifier.align(Alignment.CenterHorizontally).testTag(ComposeTestTags.NAVIGATE_LISTS_TEST_TAG)) {
+            Text(text = "Navigate To Lists")
+        }
+        Button(onClick = {
             navigate(NavigationItem.Tasks.route)
-        }, modifier = Modifier.align(Alignment.CenterHorizontally).testTag("btnNavigateTasks")) {
+        }, modifier = Modifier.align(Alignment.CenterHorizontally).testTag(ComposeTestTags.NAVIGATE_TASKS_TEST_TAG)) {
             Text(text = "Navigate To Tasks")
         }
     }
